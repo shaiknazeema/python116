@@ -1,0 +1,24 @@
+def find_lps_length_recursion(string):
+    start, end = 0, len(string) - 1
+    return find_lps_length_recursion_util(string, start, end)
+
+
+def find_lps_length_recursion_util(string, start, end):
+    if (start > end):
+        return 0
+
+    if (start == end):
+        return 1
+
+    if (string[start] == string[end]):
+        return 2 + find_lps_length_recursion_util(string, start + 1, end - 1)
+    else:
+        skip_start_lps = find_lps_length_recursion_util(string, start + 1, end)
+        skip_end_lps = find_lps_length_recursion_util(string, start, end - 1)
+        return max(skip_start_lps, skip_end_lps)
+
+
+print("Recursive Method :")
+print(find_lps_length_recursion("abdbca"))
+print(find_lps_length_recursion("cddpd"))
+print(find_lps_length_recursion("pqr"))

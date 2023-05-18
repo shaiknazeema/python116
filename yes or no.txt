@@ -1,0 +1,5 @@
+text = input(" ")
+if text == "yes" or text == "YES" or text == "Yes":
+    print("Yes")
+else:
+    print("No")

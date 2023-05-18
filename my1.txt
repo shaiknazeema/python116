@@ -1,0 +1,8 @@
+import math
+lower = math.ceil(2000 / 7)
+upper = math.floor(3201 / 7)
+for i in range(lower, upper+1):
+   if (7 * i) % 5 != 0:
+     print(7 * i, end =' '",")
+   else:
+     continue
